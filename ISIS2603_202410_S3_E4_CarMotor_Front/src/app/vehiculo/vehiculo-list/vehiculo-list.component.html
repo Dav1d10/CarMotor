@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <!-- Sección para mostrar los detalles del vehículo seleccionado -->
+  <div *ngIf="selectedVehiculo">
+    <app-vehiculo-detail [vehiculoDetail]="selectedVehiculo"></app-vehiculo-detail>
+  </div>
+
+  <!-- Listado de vehículos -->
+  <div class="row">
+    <div class="col mb-2" *ngFor="let vehiculo of vehiculos">
+      <div class="card p-2" style="width: 15rem; height: 15rem; overflow: auto;">
+        <img
+          class="card-img-top"
+          [src]="vehiculo.fotografia" 
+          alt="{{ vehiculo.marca }} {{ vehiculo.modelo }}"
+          (click)="onSelected(vehiculo)"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ vehiculo.marca }} {{ vehiculo.modelo }}</h5>
+          <p class="card-text">{{ vehiculo.precio | currency }}</p>
+        </div>
+      </div>
+    </div>
+       
+</div>

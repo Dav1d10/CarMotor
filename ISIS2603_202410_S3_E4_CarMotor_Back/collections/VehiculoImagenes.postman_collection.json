@@ -1,0 +1,500 @@
+{
+	"info": {
+		"_postman_id": "c11fcd93-60b8-4bff-981a-a1e65180f4e8",
+		"name": "VehiculoImagenes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32885236"
+	},
+	"item": [
+		{
+			"name": "Agregar una imagen a un vehículo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes/{{imagen_id_1}}.\n\n",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"vehiculos",
+						"{{vehiculo_id}}",
+						"imagenes",
+						"{{imagen_id_1}}.\n\n"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes/{{imagen_id_1}}.",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes/{{imagen_id_1}}.\n\n",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vehiculos",
+								"{{vehiculo_id}}",
+								"imagenes",
+								"{{imagen_id_1}}.\n\n"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Agregar una imagen que no existe a un vehículo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes/0",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"vehiculos",
+						"{{vehiculo_id}}",
+						"imagenes",
+						"0"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar una imagen que no existe a un vehículo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vehiculos",
+								"{{vehiculo_id}}",
+								"imagenes",
+								"0"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"apierror\": {\n        \"status\": \"NOT_FOUND\",\n        \"timestamp\": \"21-03-2024 10:15:29\",\n        \"message\": \"The image with the given id was not found\"\n    }\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Obtener una imagen de un vehículo",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Obtener una imagen de un vehículo",
+					"originalRequest": {
+						"method": "GET",
+						"header": []
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"url\": \"https://www.shutterstock.com/image-photo/minsk-belarus-january-17-2017-600nw-566870722.jpg\",\n    \"tipo\": \"Exterior\",\n    \"vehiculo\": {\n        \"marca\": \"Toyota\",\n        \"serie\": \"123456789\",\n        \"ultimoPlaca\": 7,\n        \"modelo\": \"Corolla\",\n        \"tipo\": \"Sedán\",\n        \"capacidad\": 5,\n        \"precio\": 20000,\n        \"asesor\": { \"id\": 1},\n        \"sede\": { \"id\": 1},\n        \"horarioTestDrive\": { \"id\": 1},\n        \"imagenes\": [\n            {\n                \"id\": 1,\n                \"url\": \"https://www.shutterstock.com/image-photo/minsk-belarus-january-17-2017-600nw-566870722.jpg\",\n                \"tipo\": \"Exterior\"\n            }\n        ]\n    }\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Obtener una imagen que no existe de un vehículo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes/0",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"vehiculos",
+						"{{vehiculo_id}}",
+						"imagenes",
+						"0"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una imagen que no existe de un vehículo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vehiculos",
+								"{{vehiculo_id}}",
+								"imagenes",
+								"0"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"apierror\": {\n        \"status\": \"NOT_FOUND\",\n        \"timestamp\": \"21-03-2024 10:17:39\",\n        \"message\": \"The image with the given id was not found\"\n    }\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Obtener una imagen que no está asociada a un vehículo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes/{{imagen_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"vehiculos",
+						"{{vehiculo_id}}",
+						"imagenes",
+						"{{imagen_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una imagen que no está asociada a un vehículo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes/{{imagen_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vehiculos",
+								"{{vehiculo_id}}",
+								"imagenes",
+								"{{imagen_id_2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"apierror\": {\n        \"status\": \"PRECONDITION_FAILED\",\n        \"timestamp\": \"21-03-2024 10:19:03\",\n        \"message\": \"The image is not associated to the vehicle\"\n    }\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Obtener las imágenes de un vehículo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes\n\n",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"vehiculos",
+						"{{vehiculo_id}}",
+						"imagenes\n\n"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener las imágenes de un vehículo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes\n\n",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vehiculos",
+								"{{vehiculo_id}}",
+								"imagenes\n\n"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"url\": \"https://www.shutterstock.com/image-photo/minsk-belarus-january-17-2017-600nw-566870722.jpg\",\n        \"tipo\": \"Exterior\",\n        \"vehiculoId\": 123\n    },\n    {\n        \"id\": 2,\n        \"url\": \"https://www.shutterstock.com/image-photo/classic-car-600nw-566870723.jpg\",\n        \"tipo\": \"Interior\",\n        \"vehiculoId\": 123\n    }\n]\n"
+				}
+			]
+		},
+		{
+			"name": "Asociar imágenes a un vehículo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": {{new_id_e},\n        \"url\": \"https://example.com/imagen1.jpg\",\n        \"tipo\": \"Exterior\"\n    },\n    {\n        \"id\": {{new_id_f}\n        \"url\": \"https://example.com/imagen2.jpg\",\n        \"tipo\": \"Interior\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"vehiculos",
+						"{{vehiculo_id}}",
+						"imagenes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Asociar imágenes a un vehículo",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vehiculos",
+								"{{vehiculo_id}}",
+								"imagenes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"url\": \"https://example.com/imagen1.jpg\",\n        \"tipo\": \"Exterior\",\n        \"vehiculoId\": 1\n    },\n    {\n        \"id\": 2,\n        \"url\": \"https://example.com/imagen2.jpg\",\n        \"tipo\": \"Interior\",\n        \"vehiculoId\": 1\n    }\n]\n\n"
+				}
+			]
+		},
+		{
+			"name": "Asociar imágenes que no existen a un vehículo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": 0,\n        \"url\": \"https://example.com/imagen_inexistente.jpg\",\n        \"tipo\": \"Exterior\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes\n\n",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"vehiculos",
+						"{{vehiculo_id}}",
+						"imagenes\n\n"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Asociar imágenes que no existen a un vehículo",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes\n\n",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vehiculos",
+								"{{vehiculo_id}}",
+								"imagenes\n\n"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"apierror\": {\n        \"status\": \"NOT_FOUND\",\n        \"timestamp\": \"21-03-2024 10:25:21\",\n        \"message\": \"The image with the given id was not found\"\n    }\n}\n\n"
+				}
+			]
+		},
+		{
+			"name": "Borrar una imagen de un vehículo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes{{imagen_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"vehiculos",
+						"{{vehiculo_id}}",
+						"imagenes{{imagen_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar una imagen de un vehículo",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes{{imagen_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vehiculos",
+								"{{vehiculo_id}}",
+								"imagenes{{imagen_id_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Borrar una imagen de un vehículo que no existe",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/vehiculos/0/imageness/{{imagen_id_2}}\n\n",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"vehiculos",
+						"0",
+						"imageness",
+						"{{imagen_id_2}}\n\n"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar una imagen de un vehículo que no existe",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vehiculos/0/imageness/{{imagen_id_2}}\n\n",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vehiculos",
+								"0",
+								"imageness",
+								"{{imagen_id_2}}\n\n"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Borrar una imagen que no existe de un vehiculo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes/0",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"vehiculos",
+						"{{vehiculo_id}}",
+						"imagenes",
+						"0"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar una imagen que no existe de un vehiculo",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vehiculos/{{vehiculo_id}}/imagenes/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vehiculos",
+								"{{vehiculo_id}}",
+								"imagenes",
+								"0"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

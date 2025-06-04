@@ -1,0 +1,59 @@
+ <hr />
+
+<div class="container">
+    <h2>Horarios de Test Drive</h2>
+  </div>
+
+  <hr />
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div *ngFor="let horario of horarios" class="col mb-2">
+        <div class="card p-2" style="width: 15rem; height: 20rem">
+          <div class="card-body">
+            <p class="card-text">[{{ horario.id }}]</p>
+            <h5 class="card-title">{{ horario.fecha }}</h5>
+            <hr />
+            <h6 class="card-text">En la sede:</h6>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/sedes/list']" routerLinkActive="router-link-active" style="color: blue;">Detalles de la sede</a>
+            <hr />
+            <h6 class="card-text">Hora:</h6>
+            <p class="card-text">12:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+
+   <hr />
+   
+   <div>
+    <form class="form-inline">
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-0 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+        </div>
+      </div>
+      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Sede: </label>
+      <div></div>
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <option selected>Escoger...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="1">4</option>
+        <option value="2">5</option>
+        <option value="3">6</option>
+        <option value="1">7</option>
+        <option value="2">8</option>
+      </select>
+    
+      <div>
+      </div>
+    
+      <button type="submit" class="btn btn-primary my-1">Submit</button>
+    </form>
+   </div>
+
+   <hr />

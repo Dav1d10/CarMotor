@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <p class="h3 p-3">{{ sedeDetail.nombre }}</p>
+  <div class="row">
+    <div class="col-2">
+      <div class="thumb">
+        <img class="img-fluid" [src]="sedeDetail.imagen" [alt]="sedeDetail.nombre" />
+      </div>
+    </div>
+    <div class="col">
+      <dl>
+        <dt>Direccion</dt>
+        <dd>{{ sedeDetail.direccion }}</dd>
+        <hr />
+        <dt>Telefono</dt>
+        <dd>{{ sedeDetail.telefono }}</dd>
+        <hr />
+        <dt class="bold">Horario de atencion</dt>
+        <dd class="caption">{{ sedeDetail.horarioAtencion }}</dd>
+        <hr />
+        <dt>Asesores</dt>
+        <ng-container *ngFor="let asesor of sedeDetail.asesores">
+          <dd class="caption">
+            <img class="img-fluid" [src]="asesor.fotografia" [alt]="asesor.nombre" />
+            <br />
+            <p>Nombre: <a [routerLink]="['/asesores', asesor.id]">{{ asesor.nombre }}</a></p>
+          </dd>
+        </ng-container>
+        <hr />
+        <dt>Vehiculos</dt>
+        <ng-container *ngFor="let vehiculo of sedeDetail.vehiculos">
+          <dd class="caption">
+            <img class="img-fluid" [src]="vehiculo.fotografia" [alt]="vehiculo.precio" />
+            <br />
+            <p>Precio: <a [routerLink]="['/vehiculos', vehiculo.id]">{{ vehiculo.precio }}</a></p>
+          </dd>
+        </ng-container>
+      </dl>
+    </div>
+  </div>
+</div>
+
+

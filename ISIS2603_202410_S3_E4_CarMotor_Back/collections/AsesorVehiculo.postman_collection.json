@@ -1,0 +1,689 @@
+{
+	"info": {
+		"_postman_id": "9cc4f641-7dee-4d7e-aa98-8eeae55e44e4",
+		"name": "AsesorVehiculo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32619696"
+	},
+	"item": [
+		{
+			"name": "Agregar un vehiculo a un asesor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos/{{vehiculo_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos",
+						"{{vehiculo_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar un vehiculo a un asesor",
+					"originalRequest": {
+						"method": "GET",
+						"header": []
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": 1,\r\n    \"marca\": \"Mercedes Benz\",\r\n    \"serie\": \"ABC123456\",\r\n    \"ultimoPlaca\": 3,\r\n    \"modelo\": \"2021\",\r\n    \"tipo\": \"pequeno\",\r\n    \"capacidad\": 5,\r\n    \"precio\": 30000,\r\n    \"asesor\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"David Caro\",\r\n        \"telefono\": \"3005530473\",\r\n        \"correo\": \"d.carol@uniandes.edu.co\",\r\n        \"fotografia\": \"https://images.app.goo.gl/GKcDFBjtW9kX9VtBA\"\r\n    },\r\n    \"sede\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"Prado\",\r\n        \"direccion\": \"Cll127\",\r\n        \"telefono\": \"1234567\",\r\n        \"horarioAtencion\": \"8:00-17:00\"\r\n    },\r\n    \"imagenes\": [],\r\n    \"horarioTestDrive\": {\r\n        \"id\": 1,\r\n        \"fecha\": \"12/04/24\"\r\n    }\r\n       \r\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar un vehiculo que no existe a un asesor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.apierror.message).to.eql(\"The vehiculo with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos/0",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos",
+						"0"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar un vehiculo que no existe a un asesor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos",
+								"0"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"apierror\": {\r\n        \"status\": \"VEHICULO_NOT_FOUND\",\r\n        \"timestamp\": \"21-02-2023 10:15:29\",\r\n        \"message\": \"El vehiculo con el id dado no fue encontrado\"\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un vehiculo de un asesor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos/{{asesor_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos",
+						"{{asesor_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un vehiculo de un asesor",
+					"originalRequest": {
+						"method": "GET",
+						"header": []
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": 1,\r\n    \"marca\": \"Mercedes Benz\",\r\n    \"serie\": \"ABC123456\",\r\n    \"ultimoPlaca\": 3,\r\n    \"modelo\": \"2021\",\r\n    \"tipo\": \"pequeno\",\r\n    \"capacidad\": 5,\r\n    \"precio\": 30000,\r\n    \"asesor\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"David Caro\",\r\n        \"telefono\": \"3005530473\",\r\n        \"correo\": \"d.carol@uniandes.edu.co\",\r\n        \"fotografia\": \"https://images.app.goo.gl/GKcDFBjtW9kX9VtBA\"\r\n    },\r\n    \"sede\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"Prado\",\r\n        \"direccion\": \"Cll127\",\r\n        \"telefono\": \"1234567\",\r\n        \"horarioAtencion\": \"8:00-17:00\"\r\n    },\r\n    \"imagenes\": [],\r\n    \"horarioTestDrive\": {\r\n        \"id\": 1,\r\n        \"fecha\": \"12/04/24\"\r\n    }\r\n       \r\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un vehiculo que no existe de un asesor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.apierror.message).to.eql(\"The vehiculo with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos/0",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos",
+						"0"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un vehiculo que no existe de un asesor",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos",
+								"0"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"apierror\": {\r\n        \"status\": \"VEHICULO_NOT_FOUND\",\r\n        \"timestamp\": \"21-02-2023 10:17:39\",\r\n        \"message\": \"El vehiculo con el id dado no fue encontrado\"\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un vehiculo que no esta asociado a un asesor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.apierror.message).to.eql(\"The vehiculo is not associated to the asesor\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos/{{vehiculo_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos",
+						"{{vehiculo_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un vehiculo que no esta asociado a un asesor",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos/{{vehiculo_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos",
+								"{{vehiculo_id_2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"apierror\": {\r\n        \"status\": \"PRECONDITION_FAILED\",\r\n        \"timestamp\": \"21-02-2023 10:19:03\",\r\n        \"message\": \"El vehiculo no esta asociado con el asesor\"\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener los vehiculos de un asesor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Number of vehiculos > ' + 0, function () {\r",
+							"   var data = pm.response.json()\r",
+							"   pm.expect(data.length).to.greaterThan(0)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/asesores/{{asesor_id}}/asesores",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"asesores"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener los vehiculos de un asesor",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/asesores/{{asesor_id}}/asesores",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"asesores"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\r\n   {\r\n        \"id\": 1,\r\n        \"marca\": \"Mercedes Benz\",\r\n        \"serie\": \"ABC123456\",\r\n        \"ultimoPlaca\": 3,\r\n        \"modelo\": \"2021\",\r\n        \"tipo\": \"pequeno\",\r\n        \"capacidad\": 5,\r\n        \"precio\": 30000,\r\n        \"asesor\": [\r\n            {\r\n            \"id\": 1,\r\n            \"nombre\": \"David Caro\",\r\n            \"telefono\": \"3005530473\",\r\n            \"correo\": \"d.carol@uniandes.edu.co\",\r\n            \"fotografia\": \"https://images.app.goo.gl/GKcDFBjtW9kX9VtBA\"\r\n        }],\r\n        \"sede\": {\r\n            \"id\": 1,\r\n            \"nombre\": \"Prado\",\r\n            \"direccion\": \"Cll127\",\r\n            \"telefono\": \"1234567\",\r\n            \"horarioAtencion\": \"8:00-17:00\"\r\n        }\r\n        \"imagenes\": [],\r\n        \"horarioTestDrive\": {\r\n            \"id\": 1,\r\n            \"fecha\": \"12/04/24\"\r\n        }\r\n        \r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Asociar vehiculos a un asesor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n    \"id\": {{new_id_v}},\r\n    \"marca\": \"Mercedes Benz\",\r\n    \"serie\": \"ABC123456\",\r\n    \"ultimoPlaca\": 3,\r\n    \"modelo\": \"2021\",\r\n    \"tipo\": \"pequeno\",\r\n    \"capacidad\": 5,\r\n    \"precio\": 30000,\r\n    \"sede\": {\r\n        \"id\": {{new_id_s}},\r\n        \"nombre\": \"Prado\",\r\n        \"direccion\": \"Cll127\",\r\n        \"telefono\": \"1234567\",\r\n        \"horarioAtencion\": \"8:00-17:00\"\r\n    },\r\n    \"horarioTestDrive\": {\r\n        \"id\": {{new_id_h}},\r\n        \"fecha\": \"12/04/24\"\r\n    }\r\n       \r\n},\r\n    {\r\n    \"id\": {{new_id_v2}},\r\n    \"marca\": \"BMW\",\r\n    \"serie\": \"ABC654321\",\r\n    \"ultimoPlaca\": 2,\r\n    \"modelo\": \"2022\",\r\n    \"tipo\": \"pequeno\",\r\n    \"capacidad\": 5,\r\n    \"precio\": 35000,\r\n    \"sede\": {\r\n        \"id\": {{new_id_s}},\r\n        \"nombre\": \"Prado\",\r\n        \"direccion\": \"Cll127\",\r\n        \"telefono\": \"1234567\",\r\n        \"horarioAtencion\": \"8:00-17:00\"\r\n    },\r\n    \"horarioTestDrive\": {\r\n        \"id\": {{new_id_h}},\r\n        \"fecha\": \"12/04/24\"\r\n    }\r\n       \r\n}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Asociar vehiculos a un asesor",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n    \"id\": {{new_id_v}},\r\n    \"marca\": \"Mercedes Benz\",\r\n    \"serie\": \"ABC123456\",\r\n    \"ultimoPlaca\": 3,\r\n    \"modelo\": \"2021\",\r\n    \"tipo\": \"pequeno\",\r\n    \"capacidad\": 5,\r\n    \"precio\": 30000,\r\n    \"sede\": {\r\n        \"id\": {{new_id_s}},\r\n        \"nombre\": \"Prado\",\r\n        \"direccion\": \"Cll127\",\r\n        \"telefono\": \"1234567\",\r\n        \"horarioAtencion\": \"8:00-17:00\"\r\n    },\r\n    \"horarioTestDrive\": {\r\n        \"id\": {{new_id_h}},\r\n        \"fecha\": \"12/04/24\"\r\n    }\r\n       \r\n},\r\n    {\r\n    \"id\": {{new_id_v2}},\r\n    \"marca\": \"BMW\",\r\n    \"serie\": \"ABC654321\",\r\n    \"ultimoPlaca\": 2,\r\n    \"modelo\": \"2022\",\r\n    \"tipo\": \"pequeno\",\r\n    \"capacidad\": 5,\r\n    \"precio\": 35000,\r\n    \"sede\": {\r\n        \"id\": {{new_id_s}},\r\n        \"nombre\": \"Prado\",\r\n        \"direccion\": \"Cll127\",\r\n        \"telefono\": \"1234567\",\r\n        \"horarioAtencion\": \"8:00-17:00\"\r\n    },\r\n    \"horarioTestDrive\": {\r\n        \"id\": {{new_id_h}},\r\n        \"fecha\": \"12/04/24\"\r\n    }\r\n       \r\n}\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\r\n    {\r\n    \"id\": 1,\r\n    \"marca\": \"Mercedes Benz\",\r\n    \"serie\": \"ABC123456\",\r\n    \"ultimoPlaca\": 3,\r\n    \"modelo\": \"2021\",\r\n    \"tipo\": \"pequeno\",\r\n    \"capacidad\": 5,\r\n    \"precio\": 30000,\r\n    \"sede\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"Prado\",\r\n        \"direccion\": \"Cll127\",\r\n        \"telefono\": \"1234567\",\r\n        \"horarioAtencion\": \"8:00-17:00\"\r\n    },\r\n    \"horarioTestDrive\": {\r\n        \"id\": 1,\r\n        \"fecha\": \"12/04/24\"\r\n    },\r\n    \"imagenes\": [],\r\n    \"asesor\": {}\r\n       \r\n},\r\n    {\r\n    \"id\": 2,\r\n    \"marca\": \"BMW\",\r\n    \"serie\": \"ABC654321\",\r\n    \"ultimoPlaca\": 2,\r\n    \"modelo\": \"2022\",\r\n    \"tipo\": \"pequeno\",\r\n    \"capacidad\": 5,\r\n    \"precio\": 35000,\r\n    \"sede\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"Prado\",\r\n        \"direccion\": \"Cll127\",\r\n        \"telefono\": \"1234567\",\r\n        \"horarioAtencion\": \"8:00-17:00\"\r\n    },\r\n    \"horarioTestDrive\": {\r\n        \"id\": 1,\r\n        \"fecha\": \"12/04/24\"\r\n    },\r\n    \"imagenes\": [],\r\n    \"asesor\": {}\r\n       \r\n}\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Asociar vehiculos que no existen a un asesor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.apierror.message).to.eql(\"The vehiculo with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"marca\": \"Mercedes Benz\",\r\n        \"id\": 0,\r\n        \"serie\": \"ABC123456\",\r\n        \"ultimoPlaca\": 3,\r\n        \"modelo\": \"2021\",\r\n        \"tipo\": \"pequeno\",\r\n        \"capacidad\": 5,\r\n        \"precio\": 30000\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Asociar vehiculos que no existen a un asesor",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"apierror\": {\r\n        \"status\": \"VEHICULO_NOT_FOUND\",\r\n        \"timestamp\": \"21-02-2023 10:25:21\",\r\n        \"message\": \"El vehiculo con el id dado no fue encontrado\"\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Borrar un vehiculo de un asesor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos{{vehiculo_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos{{vehiculo_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar un vehiculo de un asesor",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos{{vehiculo_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos{{vehiculo_id_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Borrar un vehiculo a un asesor que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.apierror.message).to.eql(\"The vehiculo with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/asesores/0/artworks/{{artwork_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"0",
+						"artworks",
+						"{{artwork_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar un vehiculo a un asesor que no existe",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/asesores/0/artworks/{{artwork_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"asesores",
+								"0",
+								"artworks",
+								"{{artwork_id_2}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Borrar un vehiculo que no existe de un asesor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.apierror.message).to.eql(\"The vehiculo with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos/0",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos",
+						"0"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar un vehiculo que no existe de un asesor",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/asesores/{{asesor_id}}/vehiculos/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos",
+								"0"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

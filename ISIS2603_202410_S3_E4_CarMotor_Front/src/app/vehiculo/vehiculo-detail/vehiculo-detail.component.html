@@ -1,0 +1,21 @@
+<div *ngIf="vehiculoDetail">
+
+  <h2>{{ vehiculoDetail.marca }} - {{ vehiculoDetail.modelo }}</h2>
+  <p><strong>Serie:</strong> {{ vehiculoDetail.serie }}</p>
+  <p><strong>Último número de placa:</strong> {{ vehiculoDetail.ultimoPlaca }}</p>
+  <p><strong>Tipo:</strong> {{ vehiculoDetail.tipo }}</p>
+  <p><strong>Capacidad:</strong> {{ vehiculoDetail.capacidad }}</p>
+  <p><strong>Precio:</strong> ${{ vehiculoDetail.precio }}</p>
+
+
+  <div *ngFor="let imagen of vehiculoDetail.fotografia">
+    <img [src]="imagen" alt="{{ vehiculoDetail.marca }}" class="img-fluid">
+  </div>
+
+
+  <h3>Asesor de ventas</h3>
+  <p><strong>Nombre:</strong> {{ vehiculoDetail.asesor.nombre}}</p>
+  
+  <h3>Sede</h3>
+  <p><strong>Sede:</strong> {{ vehiculoDetail.sede.direccion}}</p>
+</div>

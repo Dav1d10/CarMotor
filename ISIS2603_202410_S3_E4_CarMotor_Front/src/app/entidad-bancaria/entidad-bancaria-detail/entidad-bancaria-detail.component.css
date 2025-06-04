@@ -1,0 +1,16 @@
+.entidad-bancaria-detail {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  .entidad-bancaria-detail h2 {
+    color: #333;
+  }
+  
+  .entidad-bancaria-detail p {
+    margin: 5px 0;
+  }
+  

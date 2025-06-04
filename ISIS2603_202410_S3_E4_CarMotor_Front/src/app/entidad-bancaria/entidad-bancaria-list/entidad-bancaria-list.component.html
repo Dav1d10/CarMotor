@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="list">
+    <h2>Lista de Entidades Bancarias</h2>
+    <input type="text" [(ngModel)]="searchTerm" (input)="filterEntidades()" placeholder="Buscar...">
+    <button (click)="sortByPolizaCost()">Ordenar por Costo de Póliza</button>
+    <ul>
+      <li *ngFor="let entidad of entidadesBancarias" (click)="onSelected(entidad)" [class.selected]="entidad === entidadSelect">
+        {{ entidad.nombre }}
+      </li>
+    </ul>
+  </div>
+  <div class="detail" *ngIf="select">
+    <app-entidad-bancaria-detail [entidadBancariaDetail]="entidadSelect"></app-entidad-bancaria-detail>
+  </div>
+</div>

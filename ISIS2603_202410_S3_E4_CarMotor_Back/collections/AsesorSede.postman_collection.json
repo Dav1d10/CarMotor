@@ -1,0 +1,504 @@
+{
+	"info": {
+		"_postman_id": "6eb10527-7ac0-45b4-b35e-e2d3c23c2623",
+		"name": "AsesorSede",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32619696"
+	},
+	"item": [
+		{
+			"name": "Crear una sede",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.globals.set(\"sede_id_1\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Prado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/sedes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"sedes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear una sede",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Prado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sedes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sedes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Crear un asesor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.globals.set(\"asesor_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"David Caro\",\r\n    \"telefono\": \"3005530473\",\r\n    \"correo\": \"d.carol@uniandes.edu.co\",\r\n    \"fotografia\":\"https://images.app.goo.gl/GKcDFBjtW9kX9VtBA\",\r\n    \"sede\": {\r\n        \"id\": {{sede_id_1}}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/asesores",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear un asesor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"David Caro\",\r\n    \"telefono\": \"3005530473\",\r\n    \"correo\": \"d.carol@uniandes.edu.co\",\r\n    \"fotografia\":\"https://images.app.goo.gl/GKcDFBjtW9kX9VtBA\",\r\n    \"sede\": {\r\n        \"id\": {{sede_id_1}}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/asesores",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"asesores"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Asociar una sede a un asesor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{sede_id_1}},\r\n    \"nombre\": \"Prado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/asesores/{{asesor_id}}/sede",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"sede"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Asociar una sede a un asesor",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": {{sede_id_1}},\r\n    \"nombre\": \"Prado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/asesores/{{asesor_id}}/sede",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"sede"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Asociar una sede que no existe a un asesor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.apierror.message).to.eql(\"The sede with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/asesores/{{asesor_id}}/sede",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"sede"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Asociar una sede que no existe a un asesor",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/asesores/{{asesor_id}}/sede",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"sede"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Asociar una sede a un asesor que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.apierror.message).to.eql(\"The asesor with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Prado\",\r\n    \"id\": {{sede_id_1}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/asesores/0/sede",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"0",
+						"sede"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Asociar una sede a un asesor que no existe",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Prado\",\r\n    \"id\": {{sede_id_1}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/asesores/0/sede",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"asesores",
+								"0",
+								"sede"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Borrar un asesor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/asesores/{{asesor_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar un asesor",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/asesores/{{asesor_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Borrar una sede",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/sedes/{{sede_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"sedes",
+						"{{sede_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar una sede",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/sedes/{{sede_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sedes",
+								"{{sede_id_1}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

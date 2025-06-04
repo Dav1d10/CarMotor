@@ -1,0 +1,642 @@
+{
+	"info": {
+		"_postman_id": "c7d8f7eb-1201-4913-832a-4906f860897b",
+		"name": "VehiculoAsesor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33043971"
+	},
+	"item": [
+		{
+			"name": "Agregar asesor a vehiculo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos/{{vehiculo_id_1}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos",
+						"{{vehiculo_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar asesor a vehiculo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"marca\": \"Texto m\",\r\n    \"serie\": \"Texto s\",\r\n    \"ultimoPlaca\": 312,\r\n    \"modelo\": \"Texto m2\",\r\n    \"tipo\": \"Texto t\",\r\n    \"capacidad\": 4,\r\n    \"precio\": 100000,\r\n    \"sede\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"Texto\",\r\n        \"direccion\": \"Texto\",\r\n        \"telefono\": \"Texto\",\r\n        \"horarioAtencion\": \"Texto\"\r\n    },\r\n    \"asesor\": [\r\n        {\r\n            \"id\": 1,\r\n            \"nombre\": \"Texto n\",\r\n            \"telefono\": \"Texto t\",\r\n            \"correo\": \"Texto c\",\r\n            \"fotografia\": \"Texto dir\",\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos/{{vehiculo_id_1}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos",
+								"{{vehiculo_id_1}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Texto m\",\r\n    \"telefono\": \"Texto s\",\r\n    \"correo\": 312,\r\n    \"fotografia\": \"Texto m2\",\r\n    \"sede\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"Texto\",\r\n        \"direccion\": \"Texto\",\r\n        \"telefono\": \"Texto\",\r\n        \"horarioAtencion\": \"Texto\"\r\n    },\r\n    \"vehiculosAsignados\": [\r\n        {\r\n        \"id\": 1,\r\n        \"marca\": \"Texto m\",\r\n        \"serie\": \"Texto s\",\r\n        \"ultimoPlaca\": 312,\r\n        \"modelo\": \"Texto m2\",\r\n        \"tipo\": \"Texto t\",\r\n        \"capacidad\": 4,\r\n        \"precio\": 100000\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar asesor que no existe a un vehiculo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos/0",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos",
+						"0"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar asesor que no existe a un vehiculo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos/0",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos",
+								"0"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"apierror\": {\n        \"status\": \"NOT_FOUND\",\n        \"timestamp\": \"21-02-2023 10:15:29\",\n        \"message\": \"El vehiculo with the given id was not found\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "obtener un asesor de un vehiculo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos/{{vehiculo_id_1}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos",
+						"{{vehiculo_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "obtener un asesor de un vehiculo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"marca\": \"Texto m\",\r\n    \"serie\": \"Texto s\",\r\n    \"ultimoPlaca\": 312,\r\n    \"modelo\": \"Texto m2\",\r\n    \"tipo\": \"Texto t\",\r\n    \"capacidad\": 4,\r\n    \"precio\": 100000,\r\n    \"sede\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"Texto\",\r\n        \"direccion\": \"Texto\",\r\n        \"telefono\": \"Texto\",\r\n        \"horarioAtencion\": \"Texto\"\r\n    },\r\n    \"asesor\": [\r\n        {\r\n            \"id\": 1,\r\n            \"nombre\": \"Texto n\",\r\n            \"telefono\": \"Texto t\",\r\n            \"correo\": \"Texto c\",\r\n            \"fotografia\": \"Texto dir\",\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos/{{vehiculo_id_1}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos",
+								"{{vehiculo_id_1}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Texto m\",\r\n    \"telefono\": \"Texto s\",\r\n    \"correo\": 312,\r\n    \"fotografia\": \"Texto m2\",\r\n    \"sede\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"Texto\",\r\n        \"direccion\": \"Texto\",\r\n        \"telefono\": \"Texto\",\r\n        \"horarioAtencion\": \"Texto\"\r\n    },\r\n    \"vehiculosAsignados\": [\r\n        {\r\n        \"id\": 1,\r\n        \"marca\": \"Texto m\",\r\n        \"serie\": \"Texto s\",\r\n        \"ultimoPlaca\": 312,\r\n        \"modelo\": \"Texto m2\",\r\n        \"tipo\": \"Texto t\",\r\n        \"capacidad\": 4,\r\n        \"precio\": 100000\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener asesor que no existe en vehiculo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos/0",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos",
+						"0"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener asesor que no existe en vehiculo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos/0",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos",
+								"0"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"apierror\": {\r\n        \"status\": \"NOT_FOUND\",\r\n        \"timestamp\": \"21-02-2023 10:17:39\",\r\n        \"message\": \"The vehiculo with the given id was not found\"\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener asesor no asociado a vehiculo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos/{{vehiculo_id_2}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos",
+						"{{vehiculo_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener asesor no asociado a vehiculo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos/{{vehiculo_id_2}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos",
+								"{{vehiculo_id_2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"apierror\": {\r\n        \"status\": \"PRECONDITION_FAILED\",\r\n        \"timestamp\": \"21-02-2023 10:19:03\",\r\n        \"message\": \"The vehiculo is not associated to the author\"\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener asesor de un vehiculo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/asesores/{{asesor_id}}/asesores",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"asesores"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener asesor de un vehiculo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/asesores/{{asesor_id}}/asesores",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"asesores"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Texto m\",\r\n    \"telefono\": \"Texto s\",\r\n    \"correo\": 312,\r\n    \"fotografia\": \"Texto m2\",\r\n    \"sede\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"Texto\",\r\n        \"direccion\": \"Texto\",\r\n        \"telefono\": \"Texto\",\r\n        \"horarioAtencion\": \"Texto\"\r\n    },\r\n    \"vehiculosAsignados\": [\r\n        {\r\n        \"id\": 1,\r\n        \"marca\": \"Texto m\",\r\n        \"serie\": \"Texto s\",\r\n        \"ultimoPlaca\": 312,\r\n        \"modelo\": \"Texto m2\",\r\n        \"tipo\": \"Texto t\",\r\n        \"capacidad\": 4,\r\n        \"precio\": 100000\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Asociar asesor a vehiculo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n    \"id\": {{new_id_a2}},\r\n    \"nombre\": \"Texto m\",\r\n    \"telefono\": \"Texto s\",\r\n    \"correo\": 312,\r\n    \"fotografia\": \"Texto m2\",\r\n    \"sede\": {\r\n        \"id\": {{new_id_a3}},\r\n        \"nombre\": \"Texto\",\r\n        \"direccion\": \"Texto\",\r\n        \"telefono\": \"Texto\",\r\n        \"horarioAtencion\": \"Texto\"\r\n    },\r\n    \"vehiculosAsignados\": [\r\n        {\r\n        \"id\": {{new_id_a4}},\r\n        \"marca\": \"Texto m\",\r\n        \"serie\": \"Texto s\",\r\n        \"ultimoPlaca\": 312,\r\n        \"modelo\": \"Texto m2\",\r\n        \"tipo\": \"Texto t\",\r\n        \"capacidad\": 4,\r\n        \"precio\": 100000\r\n        }\r\n    ]\r\n    },\r\n    {\r\n    \"id\": {{new_id_b2}},\r\n    \"nombre\": \"Texto m\",\r\n    \"telefono\": \"Texto s\",\r\n    \"correo\": 312,\r\n    \"fotografia\": \"Texto m2\",\r\n    \"sede\": {\r\n        \"id\": {{new_id_b3}},\r\n        \"nombre\": \"Texto\",\r\n        \"direccion\": \"Texto\",\r\n        \"telefono\": \"Texto\",\r\n        \"horarioAtencion\": \"Texto\"\r\n    },\r\n    \"vehiculosAsignados\": [\r\n        {\r\n        \"id\": {{new_id_b4}},\r\n        \"marca\": \"Texto m\",\r\n        \"serie\": \"Texto s\",\r\n        \"ultimoPlaca\": 312,\r\n        \"modelo\": \"Texto m2\",\r\n        \"tipo\": \"Texto t\",\r\n        \"capacidad\": 4,\r\n        \"precio\": 100000\r\n        }\r\n    ]\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/assesores/{{asesor_id}}/vehiculos",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"assesores",
+						"{{asesor_id}}",
+						"vehiculos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Asociar asesor a vehiculo",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": {{new_id_b}},\r\n        \"marca\": \"Texto\",\r\n        \"serie\": \"Texto\",\r\n        \"ultimoPlaca\": 111,\r\n        \"modelo\": \"Texto\",\r\n        \"tipo\": \"Texto\",\r\n        \"capacidad\": 4,\r\n        \"precio\": 100000,\r\n        \"sede\": {\r\n        \"id\": {{new_id_e}},\r\n        \"nombre\": \"Texto\",\r\n        \"direccion\": \"Texto\",\r\n        \"telefono\": \"Texto\",\r\n        \"horarioAtencion\": \"Texto\"\r\n        }\r\n    },\r\n    {\r\n        \"id\": {{new_id_b2}},\r\n        \"marca\": \"Texto\",\r\n        \"serie\": \"Texto\",\r\n        \"ultimoPlaca\": 111,\r\n        \"modelo\": \"Texto\",\r\n        \"tipo\": \"Texto\",\r\n        \"capacidad\": 4,\r\n        \"precio\": 100000,\r\n        \"sede\": {\r\n        \"id\": {{new_id_e}},\r\n        \"nombre\": \"Texto\",\r\n        \"direccion\": \"Texto\",\r\n        \"telefono\": \"Texto\",\r\n        \"horarioAtencion\": \"Texto\"\r\n        }\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/assesores/{{asesor_id}}/vehiculos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"assesores",
+								"{{asesor_id}}",
+								"vehiculos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Texto m\",\r\n    \"telefono\": \"Texto s\",\r\n    \"correo\": 312,\r\n    \"fotografia\": \"Texto m2\",\r\n    \"sede\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"Texto\",\r\n        \"direccion\": \"Texto\",\r\n        \"telefono\": \"Texto\",\r\n        \"horarioAtencion\": \"Texto\"\r\n    },\r\n    \"vehiculosAsignados\": [\r\n        {\r\n        \"id\": 1,\r\n        \"marca\": \"Texto m\",\r\n        \"serie\": \"Texto s\",\r\n        \"ultimoPlaca\": 312,\r\n        \"modelo\": \"Texto m2\",\r\n        \"tipo\": \"Texto t\",\r\n        \"capacidad\": 4,\r\n        \"precio\": 100000\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Asociar asesor que no existe a vehiculo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n    \"id\": 1,\r\n    \"nombre\": \"Texto m\",\r\n    \"telefono\": \"Texto s\",\r\n    \"correo\": 312,\r\n    \"fotografia\": \"Texto m2\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Asociar asesor que no existe a vehiculo",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": 0,\r\n        \"marca\": \"Texto\",\r\n        \"serie\": \"Texto\",\r\n        \"ultimoPlaca\": 111,\r\n        \"modelo\": \"Texto\",\r\n        \"tipo\": \"Texto\",\r\n        \"capacidad\": 4,\r\n        \"precio\": 100000\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"apierror\": {\r\n        \"status\": \"NOT_FOUND\",\r\n        \"timestamp\": \"21-02-2023 10:25:21\",\r\n        \"message\": \"The vehiculo with the given id was not found\"\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Borrar asesor de vehiculo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos{{vehiculo_id_2}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos{{vehiculo_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar asesor de vehiculo",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos{{vehiculo_id_2}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos{{vehiculo_id_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Borrar asesor a vehiculo que no existe",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/asesores/0/sedes/{{sede_id_2}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"asesores",
+						"0",
+						"sedes",
+						"{{sede_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar asesor a vehiculo que no existe",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/asesores/0/sedes/{{sede_id_2}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"asesores",
+								"0",
+								"sedes",
+								"{{sede_id_2}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"apierror\": {\r\n        \"status\": \"NOT_FOUND\",\r\n        \"timestamp\": \"21-02-2023 10:25:21\",\r\n        \"message\": \"The vehiculo with the given id was not found\"\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Borrar asesor que no existe de vehiculo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos/0",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"asesores",
+						"{{asesor_id}}",
+						"vehiculos",
+						"0"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar asesor que no existe de vehiculo",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/asesores/{{asesor_id}}/vehiculos/0",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"asesores",
+								"{{asesor_id}}",
+								"vehiculos",
+								"0"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"apierror\": {\r\n        \"status\": \"NOT_FOUND\",\r\n        \"timestamp\": \"21-02-2023 10:25:21\",\r\n        \"message\": \"The asesor with the given id was not found\"\r\n    }\r\n}"
+				}
+			]
+		}
+	]
+}

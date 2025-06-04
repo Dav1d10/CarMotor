@@ -1,0 +1,9 @@
+<div *ngIf="entidadBancariaDetail" class="entidad-bancaria-detail">
+  <h2>Detalles de la Entidad Bancaria</h2>
+  <p><strong>ID:</strong> {{ entidadBancariaDetail.idEntidadBancaria }}</p>
+  <p><strong>Teléfono:</strong> {{ entidadBancariaDetail.telefonoContacto }}</p>
+  <p><strong>Asesor Financiero:</strong> {{ entidadBancariaDetail.asesorFinanciero }}</p>
+  <p><strong>Póliza: $</strong> {{ entidadBancariaDetail.poliza }}</p>
+  <p><strong>Nombre:</strong> {{ entidadBancariaDetail.nombre }}</p>
+  <p *ngIf="entidadBancariaDetail.autoInnovEntityId"><strong>Auto Innov ID:</strong> {{ entidadBancariaDetail.autoInnovEntityId }}</p>
+</div>

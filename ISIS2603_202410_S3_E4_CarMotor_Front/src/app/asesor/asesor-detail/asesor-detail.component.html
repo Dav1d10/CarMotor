@@ -1,0 +1,21 @@
+<!-- asesor-detail.component.html -->
+<div *ngIf="asesor" class="container mt-4">
+  <h2>{{ asesor.nombre }}</h2>
+  <img [src]="asesor.fotografia" alt="{{ asesor.nombre }}" class="img-fluid mb-4">
+  <dl class="row">
+    <dt class="col-sm-3">Nombre</dt>
+    <dd class="col-sm-9">{{ asesor.nombre }}</dd> 
+
+    <dt class="col-sm-3">Correo</dt>
+    <dd class="col-sm-9">{{ asesor.correo }}</dd>
+    
+    <dt class="col-sm-3">Teléfono</dt>
+    <dd class="col-sm-9">{{ asesor.telefono }}</dd>
+    
+    <dt class="col-sm-3">Sede</dt>
+    <dd class="col-sm-9">{{ asesor.sede.nombre }}</dd>
+    
+    <!-- Agrega más detalles según sea necesario -->
+  </dl>
+  <button class="btn btn-primary" [routerLink]="['/asesores/list']">Regresar</button>
+</div>

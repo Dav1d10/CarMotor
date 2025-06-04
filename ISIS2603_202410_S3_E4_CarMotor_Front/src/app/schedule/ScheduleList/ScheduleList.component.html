@@ -1,0 +1,6 @@
+<ul *ngIf="schedules">
+  <li *ngFor="let schedule of schedules">
+    {{ schedule.date }} {{ schedule.time }} - Available: {{ schedule.available ? 'Yes' : 'No' }}
+  </li>
+</ul>
+ 
