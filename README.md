@@ -7,15 +7,15 @@ This web application project was developed as part of the **ISIS2603 Desarrollo 
 ## Tech Stack
 
 - **Backend:** Java with Spring Boot (Restful APIs, Data Persistence, Security)
-- **Frontend** Angular (Component-Based Architecture, Reactive Forms, HTTP Client)
+- **Frontend:** Angular (Component-Based Architecture, Reactive Forms, HTTP Client)
 
 ## Repository Structure 
 
 The project is organized into two main folders:
 
 - `CarMotor/`
-    - **Backend**: `ISIS2603_202410_S3_E4_CarMotor_Back`
-    - **Frontend**: `ISIS2603_202410_S3_E4_CarMotor_Front`
+    - **Backend:** `ISIS2603_202410_S3_E4_CarMotor_Back`
+    - **Frontend:** `ISIS2603_202410_S3_E4_CarMotor_Front`
 
 ## Prerequisites
 
