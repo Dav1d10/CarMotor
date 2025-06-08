@@ -66,5 +66,9 @@ The project is organized into two main folders:
 - Luis Bobadilla
 - Samara Martinez 
 
+## Project Pitch Presentation
+
+[Presentation](https://www.canva.com/design/DAGpvFuU3YU/DBwR89X-uaEkCFO0OyGLUw/edit?utm_content=DAGpvFuU3YU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 
 
