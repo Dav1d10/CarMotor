@@ -2,7 +2,10 @@
 
 ## Description
 
-This web application project was developed as part of the **ISIS2603 Desarrollo de Software en Equipos** course at _Universidad de Los Andes_. CarMotor enables users to easily rent and pick up cars through a streamlined and intuitive interface.
+This web application project was developed as part of the **ISIS2603 Desarrollo de Software en Equipos** course at _Universidad de Los Andes_. CarMotor enables users to explore car categories, view pricing, book test drives, and get advisor support through a streamlined and intuitive interface.
+
+<img src="assets/CarMotorCars.jpg" alt="Cars preview" width="700"/>
+
 
 ## Tech Stack
 
@@ -30,19 +33,19 @@ The project is organized into two main folders:
 
 1. Open a terminal and navigate to the `backend` directory:
     ```bash
-    cd CarMotor/ISIS2603_202410_S3_E4_CarMotor_Back
+    cd ISIS2603_202410_S3_E4_CarMotor_Back
     ```
 2. Build and run the application via Maven:
     ```bash
     mvn clean spring-boot:run
     ```
-3. The backend will start on `http://localhost:8080`
+3. The backend will start on `http://localhost:8999/api`
 
 ## Running the Frontend 
 
 1. Open a terminal and navigate to the `frontend` directory:
     ```bash
-    cd CarMotor/ISIS2603_202410_S3_E4_CarMotor_Front
+    cd ISIS2603_202410_S3_E4_CarMotor_Front
     ```
 2. Install dependencies:
     ```bash
@@ -56,7 +59,7 @@ The project is organized into two main folders:
     ```bash
     ng serve
     ```
-4. Open your browser at `http://localhost:3000` to use the app.
+4. Open your browser at `http://localhost:4200` to use the app.
 
 ## Collaborators
 
