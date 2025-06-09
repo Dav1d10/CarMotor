@@ -6,6 +6,11 @@ This web application project was developed as part of the **ISIS2603 Desarrollo 
 
 <img src="assets/CarMotorCars.jpg" alt="Cars preview" width="700"/>
 
+## Project Documentation
+
+- [UML Diagram](ISIS2603_202410_S3_E4_CarMotor_Back/ENTREGABLES/UML.jpg)
+
+- [Project Pitch Presentation](https://www.canva.com/design/DAGpvFuU3YU/DBwR89X-uaEkCFO0OyGLUw/edit?utm_content=DAGpvFuU3YU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ## Tech Stack
 
@@ -69,9 +74,7 @@ The project is organized into two main folders:
 - Luis Bobadilla
 - Samara Martinez 
 
-## Project Pitch Presentation
 
-[Presentation](https://www.canva.com/design/DAGpvFuU3YU/DBwR89X-uaEkCFO0OyGLUw/edit?utm_content=DAGpvFuU3YU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 
 
