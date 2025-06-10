@@ -16,6 +16,7 @@ This web application project was developed as part of the **ISIS2603 Desarrollo 
 
 - **Backend:** Java with Spring Boot (Restful APIs, Data Persistence, Security)
 - **Frontend:** Angular (Component-Based Architecture, Reactive Forms, HTTP Client)
+- **Data Persistence:** Implemented using a SQL-based relational database.
 
 ## Repository Structure 
 
