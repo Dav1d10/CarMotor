@@ -12,11 +12,13 @@ This web application project was developed as part of the **ISIS2603 Desarrollo 
 
 - [Project Pitch Presentation](https://www.canva.com/design/DAGpvFuU3YU/DBwR89X-uaEkCFO0OyGLUw/edit?utm_content=DAGpvFuU3YU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
+- [Script for inserting data into the SQL Database](ISIS2603_202410_S3_E4_CarMotor_Back/sql/data.sql)
+
 ## Tech Stack
 
 - **Backend:** Java with Spring Boot (Restful APIs, Data Persistence, Security)
 - **Frontend:** Angular (Component-Based Architecture, Reactive Forms, HTTP Client)
-- **Data Persistence:** Implemented using a SQL-based relational database.
+- **Data Persistence:** Implemented using a SQL-based relational in-memory database.
 
 ## Repository Structure 
 
@@ -38,33 +40,45 @@ The project is organized into two main folders:
 ## Running the Backend
 
 1. Open a terminal and navigate to the `backend` directory:
-    ```bash
-    cd ISIS2603_202410_S3_E4_CarMotor_Back
-    ```
+```bash
+cd ISIS2603_202410_S3_E4_CarMotor_Back
+```
 2. Build and run the application via Maven:
-    ```bash
-    mvn clean spring-boot:run
-    ```
+```bash
+mvn clean spring-boot:run
+```
 3. The backend will start on `http://localhost:8999/api`
+
+4. Access the H2 In-Memory Database (Optional)
+    - Open your browser and go to `http://localhost:8080/h2-console`
+    - Use the following credentials and connect
+```bash
+JDBC URL: jdbc:h2:mem:CarMotor
+User: sa
+Password: password
+```
+5. Insert Data into the Database Tables (Optional)
+    - Paste this [script](ISIS2603_202410_S3_E4_CarMotor_Back/sql/data.sql) 
+    - Click the run button
 
 ## Running the Frontend 
 
 1. Open a terminal and navigate to the `frontend` directory:
-    ```bash
-    cd ISIS2603_202410_S3_E4_CarMotor_Front
-    ```
+```bash
+cd ISIS2603_202410_S3_E4_CarMotor_Front
+```
 2. Install dependencies:
-    ```bash
-    npm install
-    ```
-    Or
-    ```bash
-    yarn install
-    ```
+```bash
+npm install
+```
+Or
+```bash
+yarn install
+```
 3. Start the development server:
-    ```bash
-    ng serve
-    ```
+```bash
+ng serve
+```
 4. Open your browser at `http://localhost:4200` to use the app.
 
 ## Collaborators
