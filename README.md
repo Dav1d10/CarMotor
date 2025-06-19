@@ -12,7 +12,7 @@ This web application project was developed as part of the **ISIS2603 Desarrollo 
 
 - [Project Pitch Presentation](https://www.canva.com/design/DAGpvFuU3YU/DBwR89X-uaEkCFO0OyGLUw/edit?utm_content=DAGpvFuU3YU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
-- [Script for inserting data into the SQL Database](ISIS2603_202410_S3_E4_CarMotor_Back/sql/data.sql)
+- [Database Data Insertion Script](ISIS2603_202410_S3_E4_CarMotor_Back/sql/data.sql)
 
 ## Tech Stack
 
@@ -50,14 +50,14 @@ mvn clean spring-boot:run
 3. The backend will start on `http://localhost:8999/api`
 
 4. Access the H2 In-Memory Database (Optional)
-    - Open your browser and go to `http://localhost:8080/h2-console`
+    - Open your browser and go to `http://localhost:8999/h2-console`
     - Use the following credentials and connect
 ```bash
 JDBC URL: jdbc:h2:mem:CarMotor
 User: sa
 Password: password
 ```
-5. Insert Data into the Database Tables (Optional)
+5. Insert Data Into the Database Tables (Optional)
     - Paste this [script](ISIS2603_202410_S3_E4_CarMotor_Back/sql/data.sql) 
     - Click the run button
 
