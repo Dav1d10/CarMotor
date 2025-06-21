@@ -81,13 +81,25 @@ ng serve
 ```
 4. Open your browser at `http://localhost:4200` to use the app.
 
-## Collaborators
+## Team Members
 
 - Juan Felipe Ledesma
 - Santiago Orduz
 - Karen Fuentes
 - Luis Bobadilla
-- Samara Martinez 
+- Samara Martinez
+---
+### Collaborators
+
+The following faculty members and academic contributors were responsible for designing the initial structure and foundation of this project.
+
+- [José Bocanegra](https://github.com/josejbocanegra)
+- [Vivian Gómez](https://github.com/VivianGomez)
+- [Alonso Hernandez](https://github.com/fai-aher)
+
+
+
+
 
 
 
